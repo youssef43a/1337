@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youennaj <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: youennaj <youennaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 09:01:27 by youennaj          #+#    #+#             */
-/*   Updated: 2024/07/09 23:01:48 by youennaj         ###   ########.fr       */
+/*   Created: 2024/07/10 16:12:41 by youennaj          #+#    #+#             */
+/*   Updated: 2024/07/10 16:13:17 by youennaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char	*str)
+int	main(int ac, char **av)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (ac > i)
 	{
-		write(1, &str[i], 1);
+		j = 0;
+		while (av[i][j] != 0)
+		{
+			write(1, &av[i][j], 1);
+			j++;
+		}
+		write(1, "\n", 1);
 		i++;
 	}
+	return (0);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	ft_putstr("hello youssef ennajar haw are you\n");
-	return 0;
-}*/

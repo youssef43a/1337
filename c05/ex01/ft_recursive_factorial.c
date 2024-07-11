@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youennaj <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: youennaj <youennaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 09:01:27 by youennaj          #+#    #+#             */
-/*   Updated: 2024/07/09 23:01:48 by youennaj         ###   ########.fr       */
+/*   Created: 2024/07/09 18:56:26 by youennaj          #+#    #+#             */
+/*   Updated: 2024/07/09 18:57:10 by youennaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putstr(char	*str)
+int	ft_recursive_factorial(int nb)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
+	if (nb == 0)
+		return (1);
+	else if (nb > 0)
+		return (nb * ft_recursive_factorial(nb - 1));
+	return (0);
 }
 /*
 #include <stdio.h>
 int main()
 {
-	ft_putstr("hello youssef ennajar haw are you\n");
+	long long int	x;
+	x = ft_recursive_factorial(0);
+	printf("%lld",x);
 	return 0;
 }*/

@@ -6,7 +6,7 @@
 /*   By: youennaj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:47:24 by youennaj          #+#    #+#             */
-/*   Updated: 2024/07/08 12:23:59 by youennaj         ###   ########.fr       */
+/*   Updated: 2024/07/09 23:35:26 by youennaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,22 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
-	if (nb >= -2147483648 && nb <= 2147483647)
+	if (nb == -2147483648)
 	{
-		if (nb >= 0 && nb <= 9)
-			ft_putchar(nb + '0');
-		else if (nb < 0)
-		{
-			ft_putchar('-');
-			ft_putnbr(nb *= (-1));
-		}
-		else if (nb >= 10)
-		{
-			ft_putnbr(nb / 10);
-			ft_putnbr(nb % 10);
-		}
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb *= -1;
+	}
+	if (nb >= 0 && nb <= 9)
+		ft_putchar(nb + '0');
+	else if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
 	}
 }
 /*

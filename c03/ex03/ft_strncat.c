@@ -6,11 +6,11 @@
 /*   By: youennaj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 10:23:06 by youennaj          #+#    #+#             */
-/*   Updated: 2024/07/07 16:36:45 by youennaj         ###   ########.fr       */
+/*   Updated: 2024/07/09 13:35:32 by youennaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char	*dest, char	*src, unsigned int nb)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	int	i;
 	int	j;
@@ -28,15 +28,12 @@ char	*ft_strncat(char	*dest, char	*src, unsigned int nb)
 	dest[i] = '\0';
 	return (dest);
 }
-:x
-
-
-/*a
+/*
 #include <stdio.h>
 int main ()
 {
-	char	s1[6039] = "hello! ";
-	char	*s2 = "youssef ennajar";
+	char	s1[29] = "hello! ";
+	char	s2[9] = "youssef";
 
-	printf("%s\n",ft_strncat(s1, s2,3));
+	printf("%s\n",ft_strncat(s1, s2,5));
 }*/
