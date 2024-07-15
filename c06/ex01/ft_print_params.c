@@ -6,7 +6,7 @@
 /*   By: youennaj <youennaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:12:41 by youennaj          #+#    #+#             */
-/*   Updated: 2024/07/10 16:13:17 by youennaj         ###   ########.fr       */
+/*   Updated: 2024/07/14 14:55:26 by youennaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int	main(int ac, char **av)
 	int	i;
 	int	j;
 
-	i = 0;
+	i = 1;
 	while (ac > i)
 	{
 		j = 0;
-		while (av[i][j] != 0)
+		while (av[i][j])
 		{
 			write(1, &av[i][j], 1);
 			j++;

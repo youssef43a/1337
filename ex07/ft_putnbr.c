@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youennaj <youennaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 16:16:20 by youennaj          #+#    #+#             */
-/*   Updated: 2024/07/14 12:23:00 by youennaj         ###   ########.fr       */
+/*   Created: 2024/07/14 20:41:13 by youennaj          #+#    #+#             */
+/*   Updated: 2024/07/14 21:43:04 by youennaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+void	ft_putnbr(int nb)
 {
-	int	i;
+	char	c;
 
-	i = 0;
-	while (str[i])
+	if (nb == -2147483648)
 	{
-		write(1, &str[i], 1);
-		i++;
+		write(1, "-2147483648", 11);
+		return ;
 	}
+	if (nb < 0)
+	{
+		nb *= -1;
+		write(1, "-", 1);
+	}
+	if (nb > 9)
+		ft_putnbr(nb / 10);
+	c = nb % 10 + '0';
+	write (1, &c, 1);
 }
-
-int	main(int ac, char **av)
+/*
+int main ()
 {
-	if (ac > 1)
-	{
-		while (ac > 1)
-		{
-			ft_putstr(av[ac - 1]);
-			write(1, "\n", 1);
-			ac--;
-		}
-	}
-	return (0);
-}
+	ft_putnbr(214748364);
+	return 0;
+}*/
